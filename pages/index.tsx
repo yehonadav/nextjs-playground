@@ -1,20 +1,38 @@
 import Head from 'next/head'
 import {Header} from "../components/Header";
+import Image from 'next/image'
+import Layout, {siteTitle} from "../components/layouts/Layout";
+import utilStyles from '../styles/utils.module.css'
 
 export default function Home() {
   return (
+    <Layout home>
     <div className="container">
       <Head>
-        <title>Create Next App</title>
+        <title>{siteTitle}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
+        <section className={utilStyles.headingMd}>
+          <p>[Your Self Introduction]</p>
+          <p>
+            (This is a sample website - you’ll be building a site like this on{' '}
+            <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
+          </p>
+        </section>
         <Header/>
 
         <p className="description">
           Get started by editing <code>pages/index.js</code>
         </p>
+
+        <Image
+          src="/images/profile.jpg" // Route of the image file
+          height={144} // Desired size with correct aspect ratio
+          width={144} // Desired size with correct aspect ratio
+          alt="Your Name"
+        />
 
         <div className="grid">
           <a href="https://nextjs.org/docs" className="card">
@@ -204,5 +222,6 @@ export default function Home() {
         }
       `}</style>
     </div>
+    </Layout>
   )
 }
