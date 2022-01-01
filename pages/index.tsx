@@ -72,7 +72,7 @@ export default function Home() {
           rel="noopener noreferrer"
         >
           Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
+          <img src="/images/profile.jpg" alt="Vercel Logo" className="logo" />
         </a>
       </footer>
 
