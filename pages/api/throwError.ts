@@ -5,8 +5,8 @@ type Response = {
   text: string;
 }
 
-const handler = (_req: NextApiRequest, res: NextApiResponse<Response>) => {
-  return res.status(200).json({ text: 'Hello' })
+const handler = (_req: NextApiRequest, _res: NextApiResponse<Response>) => {
+  throw new Error("Sentry Backend Error")
 }
 
 export default withSentry(handler);

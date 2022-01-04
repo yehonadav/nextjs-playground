@@ -1,6 +1,6 @@
 import '../styles/global.css'
 import type { AppProps /*, AppContext */ } from 'next/app'
-import variables from '../styles/scss/variables.module.scss'
+// import variables from '../styles/scss/variables.module.scss'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return <Component {...pageProps} />

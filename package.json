@@ -18,7 +18,8 @@
     "remark": "^14.0.2",
     "remark-html": "^15.0.1",
     "swr": "^1.1.2",
-    "zustand": "^3.6.8"
+    "zustand": "^3.6.8",
+    "@sentry/nextjs": "^6.16.1"
   },
   "devDependencies": {
     "@types/node": "^17.0.5",
