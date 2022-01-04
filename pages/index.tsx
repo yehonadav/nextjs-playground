@@ -17,7 +17,7 @@ export const getStaticProps:GetStaticProps = async () => {
   }
 }
 
-export default function ({ allPostsData }:{allPostsData:{id:string;title:string;date:Date}[]}) {
+export default function Page({ allPostsData }:{allPostsData:{id:string;title:string;date:Date}[]}) {
   return (
     <Layout home>
       <div className="container">
@@ -50,7 +50,7 @@ export default function ({ allPostsData }:{allPostsData:{id:string;title:string;
                   </Link>
                   <br />
                   <small className={utilStyles.lightText}>
-                    <DateFormat dateString={date} />
+                    <DateFormat dateString={date.toString()} />
                   </small>
                 </li>
               ))}
@@ -102,7 +102,7 @@ export default function ({ allPostsData }:{allPostsData:{id:string;title:string;
             rel="noopener noreferrer"
           >
             Powered by{' '}
-            <img src="/images/profile.jpg" alt="Vercel Logo" className="logo" />
+            <Image src="/images/profile.jpg" alt="Vercel Logo" className="logo" height={40} width={40} />
           </a>
         </footer>
 

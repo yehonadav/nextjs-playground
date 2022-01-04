@@ -1,4 +1,4 @@
-export default function Home(props) {
+export default function Home(props:any) {
   return (
     <div>
       {JSON.stringify(props)}

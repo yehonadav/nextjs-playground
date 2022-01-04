@@ -38,7 +38,7 @@ export default function Page() {
       />
       <pre>Results: {JSON.stringify(results, null, 2)}</pre>
 
-      <p>Dynamically load react component if results contain 'Tim'</p>
+      <p>{"Dynamically load react component if results contain 'Tim'"}</p>
       {results?.find(i=>i.item==='Tim')
         ? <DynamicComponent/>
         : <pre>Load State: {JSON.stringify(results?.find(i=>i.item==='Tim'), null, 2)}</pre>}
