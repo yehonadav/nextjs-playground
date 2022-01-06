@@ -8,6 +8,14 @@
 // @ts-check
 const path = require('path')
 
+const withMDX = require('@next/mdx')({
+  extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [],
+    rehypePlugins: [],
+  },
+})
+
 /**
  * @type {import('next').NextConfig}
  **/
@@ -32,8 +40,10 @@ const sentryWebpackPluginOptions = {
 
 // Make sure adding Sentry options is the last code to run before exporting, to
 // ensure that your source maps include changes from all other Webpack plugins
-module.exports =
+module.exports = withMDX({
+  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
   // withSentryConfig(
-    nextConfig
+    ...nextConfig
     // , sentryWebpackPluginOptions
   // )
+})
