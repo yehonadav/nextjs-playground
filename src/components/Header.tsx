@@ -19,7 +19,7 @@ export const Header:FC = () => {
       <span onClick={() => useStore.setState(s=>({count: s.count+1}))}>
         Read{' '}
       </span>
-      <Link href="/src/posts/first-post">
+      <Link href="/posts/first-post">
         <a>this page!</a>
       </Link>
       <span onClick={(e) => {
