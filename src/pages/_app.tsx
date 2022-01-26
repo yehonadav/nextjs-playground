@@ -1,6 +1,8 @@
 import '../styles/global.css'
 import type {AppProps, NextWebVitalsMetric /*, AppContext */} from 'next/app'
 // import variables from '../styles/scss/variables.module.scss'
+import { SessionProvider } from "next-auth/react"
+import Head from 'next/head'
 
 export function reportWebVitals(metric:NextWebVitalsMetric ) {
   console.log("WebVital Metric:", metric);
@@ -28,10 +30,17 @@ export function reportWebVitals(metric:NextWebVitalsMetric ) {
   // })
 }
 
-
-
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
+  return (
+    <>
+      <Head>
+        <meta name='viewport' content='minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover' />
+      </Head>
+      <SessionProvider session={session}>
+        <Component {...pageProps} />
+      </SessionProvider>
+    </>
+  )
 }
 
 // Only uncomment this method if you have blocking data requirements for

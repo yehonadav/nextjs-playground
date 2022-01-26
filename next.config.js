@@ -7,6 +7,7 @@
 
 // @ts-check
 const path = require('path')
+const withPWA = require('next-pwa')
 
 // You can choose which headers to add to the list
 // after learning more below.
@@ -85,10 +86,10 @@ const nextConfig = {
 
 // Make sure adding Sentry options is the last code to run before exporting, to
 // ensure that your source maps include changes from all other Webpack plugins
-module.exports = withBundleAnalyzer(withMDX({
+module.exports = withPWA(withBundleAnalyzer(withMDX({
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
   // withSentryConfig(
     ...nextConfig
     // , sentryWebpackPluginOptions
   // )
-}))
+})))
