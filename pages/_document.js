@@ -1,10 +1,10 @@
-import Document, { Html, Head, Main, NextScript, DocumentContext} from 'next/document'
+import Document, { Html, Head, Main, NextScript } from 'next/document'
 
 const APP_NAME = 'next-pwa example'
 const APP_DESCRIPTION = 'This is an example of using next-pwa plugin'
 
-export default class AppDocument extends Document {
-  static async getInitialProps(ctx: DocumentContext) {
+export default class extends Document {
+  static async getInitialProps(ctx) {
     return await Document.getInitialProps(ctx)
   }
 
