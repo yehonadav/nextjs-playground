@@ -1,7 +1,5 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-.idea
-
 # dependencies
 /node_modules
 /.pnp
@@ -35,7 +33,5 @@ yarn-error.log*
 # vercel
 .vercel
 
-# secret env
-.env
-/public/sw.js
-/public/workbox-9a8b0a38.js
+# typescript
+*.tsbuildinfo
