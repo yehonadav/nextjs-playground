@@ -37,7 +37,7 @@ export default function Page({ allPostsData }:{allPostsData:{id:string;title:str
           <Header/>
 
           <p className="description">
-            Get started by EDITING <code>pages/index.js</code>
+            Get started by <Link href={'/notification'}>EDITING</Link> <code>pages/index.js</code>
           </p>
 
           <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
