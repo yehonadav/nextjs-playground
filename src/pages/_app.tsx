@@ -1,5 +1,6 @@
 import '../styles/global.css'
 import type {AppProps, NextWebVitalsMetric /*, AppContext */} from 'next/app'
+import Head from 'next/head'
 // import variables from '../styles/scss/variables.module.scss'
 
 export function reportWebVitals(metric:NextWebVitalsMetric ) {
@@ -28,10 +29,15 @@ export function reportWebVitals(metric:NextWebVitalsMetric ) {
   // })
 }
 
-
-
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <>
+      <Head>
+        <meta name='viewport' content='minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover' />
+      </Head>
+      <Component {...pageProps} />
+    </>
+  )
 }
 
 // Only uncomment this method if you have blocking data requirements for

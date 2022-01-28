@@ -6,11 +6,6 @@
 // @ts-check
 const path = require('path');
 
-require('webpack');
-
-// requires require('webpack')
-const withPWA = require('next-pwa');
-
 // You can choose which headers to add to the list
 // after learning more below.
 const securityHeaders = [
@@ -68,8 +63,11 @@ let nextConfig = {
   },
 }
 
-// requires webpack
-nextConfig = withPWA(nextConfig);
+// next-pwa requires require('webpack')
+// otherwise build will fail for no apparent reason in amplify
+// https://github.com/shadowwalker/next-pwa/issues/151
+require('webpack');
+nextConfig = require('next-pwa')(nextConfig);
 
 nextConfig = withBundleAnalyzer(nextConfig);
 
