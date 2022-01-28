@@ -3,5 +3,6 @@ export const appConfig = {
   appTitle: "playground",
   siteName: "playground",
   siteDescription: "playground",
+  applicationName: "playground",
   appCreator: "@yonadav",
 }
