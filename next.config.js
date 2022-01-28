@@ -4,7 +4,8 @@
 // https://docs.sentry.io/platforms/javascript/guides/nextjs/
 
 // @ts-check
-const path = require('path')
+const path = require('path');
+const withPWA = require('next-pwa');
 
 // You can choose which headers to add to the list
 // after learning more below.
@@ -64,5 +65,6 @@ let nextConfig = {
 }
 
 nextConfig = withBundleAnalyzer(nextConfig);
+nextConfig = withPWA(nextConfig);
 
 module.exports = nextConfig
