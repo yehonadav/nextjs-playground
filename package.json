@@ -10,7 +10,8 @@
     "lint": "next lint",
     "lint:auto:fix": "yarn lint --fix",
     "install:all": "yarn",
-    "install:build": "yarn && yarn run build"
+    "install:build": "yarn && yarn run build",
+    "vapid": "web-push generate-vapid-keys"
   },
   "dependencies": {
     "@mdx-js/loader": "^1.6.22",
@@ -27,11 +28,13 @@
     "remark": "^14.0.2",
     "remark-html": "^15.0.1",
     "swr": "^1.1.2",
+    "web-push": "^3.4.5",
     "zustand": "^3.6.8"
   },
   "devDependencies": {
     "@types/node": "^17.0.5",
     "@types/react": "^17.0.38",
+    "@types/web-push": "^3.3.2",
     "eslint": "8.6.0",
     "eslint-config-next": "12.0.7",
     "sass": "^1.45.2",
