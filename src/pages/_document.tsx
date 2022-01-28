@@ -19,14 +19,14 @@ class AppDocument extends Document {
           <meta name='apple-mobile-web-app-capable' content='yes' />
           <meta name='apple-mobile-web-app-status-bar-style' content='default' />
           <meta name='apple-mobile-web-app-title' content={appConfig.siteDescription} />
-          {/*<meta name='description' content='Home Page' />*/}
+          <meta name='description' content={appConfig.siteDescription} />
           <meta name='format-detection' content='telephone=no' />
           <meta name='mobile-web-app-capable' content='yes' />
           <meta name='msapplication-config' content='/manifest-static/browserconfig.xml' />
           <meta name='msapplication-TileColor' content='#2B5797' />
           <meta name='msapplication-tap-highlight' content='no' />
-          {/*<meta name='theme-color' content='#000000' />*/}
           <meta name='keywords' content='Keywords' />
+          <meta name="theme-color" content="#317EFB"/>
 
           {/* don't use static dir.*/}
           {/* Error: You cannot have assets in the directory [public/static] as they conflict with the static/* CloudFront cache behavior. Please move these assets into another directory.*/}
@@ -35,11 +35,11 @@ class AppDocument extends Document {
           <link rel='icon' type='image/png' sizes='16x16' href='/manifest-static/favicon-16x16.png' />
           <link rel='manifest' href='/manifest.json' />
           <link rel='mask-icon' href='/manifest-static/safari-pinned-tab.svg' color='#5bbad5' />
-          {/*<link rel='shortcut icon' href='/manifest-static/icons/favicon.ico' />*/}
+          <link rel='shortcut icon' href='/favicon.ico' />
 
           <meta name='twitter:card' content='summary' />
           <meta name='twitter:url' content={appConfig.url} />
-          <meta name='twitter:title' content='Nyotech' />
+          <meta name='twitter:title' content={appConfig.appTitle} />
           <meta name='twitter:description' content={appConfig.siteDescription} />
           <meta name='twitter:image' content={`${appConfig.url}/manifest-static/android-chrome-192x192.png`} />
           <meta name='twitter:creator' content={appConfig.appCreator} />
