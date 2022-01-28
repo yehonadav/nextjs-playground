@@ -5,6 +5,10 @@
 
 // @ts-check
 const path = require('path');
+
+require('webpack');
+
+// requires require('webpack')
 const withPWA = require('next-pwa');
 
 // You can choose which headers to add to the list
@@ -64,7 +68,9 @@ let nextConfig = {
   },
 }
 
-nextConfig = withBundleAnalyzer(nextConfig);
+// requires webpack
 nextConfig = withPWA(nextConfig);
+
+nextConfig = withBundleAnalyzer(nextConfig);
 
 module.exports = nextConfig
