@@ -3,8 +3,6 @@
 // https://nextjs.org/docs/api-reference/next.config.js/introduction
 // https://docs.sentry.io/platforms/javascript/guides/nextjs/
 
-// const { withSentryConfig } = require('@sentry/nextjs')
-
 // @ts-check
 const path = require('path')
 
@@ -44,18 +42,10 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });
 
-const withMDX = require('@next/mdx')({
-  extension: /\.mdx?$/,
-  options: {
-    remarkPlugins: [],
-    rehypePlugins: [],
-  },
-})
-
 /**
  * @type {import('next').NextConfig}
  **/
-const nextConfig = {
+let nextConfig = {
   /* config options here */
   reactStrictMode: true,
   swcMinify: true,
@@ -73,22 +63,6 @@ const nextConfig = {
   },
 }
 
-// const sentryWebpackPluginOptions = {
-  // Additional config options for the Sentry Webpack plugin. Keep in mind that
-  // the following options are set automatically, and overriding them is not
-  // recommended:
-  //   release, url, org, project, authToken, configFile, stripPrefix,
-  //   urlPrefix, include, ignore
-  // For all available options, see:
-  // https://github.com/getsentry/sentry-webpack-plugin#options.
-// }
+nextConfig = withBundleAnalyzer(nextConfig);
 
-// Make sure adding Sentry options is the last code to run before exporting, to
-// ensure that your source maps include changes from all other Webpack plugins
-module.exports = withBundleAnalyzer(withMDX({
-  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
-  // withSentryConfig(
-    ...nextConfig
-    // , sentryWebpackPluginOptions
-  // )
-}))
+module.exports = nextConfig
