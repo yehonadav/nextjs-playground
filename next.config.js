@@ -48,7 +48,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 let nextConfig = {
   /* config options here */
   reactStrictMode: true,
-  swcMinify: true,
+  // swcMinify: true,
   sassOptions: {
     includePaths: [path.join(__dirname, 'src/styles/scss')],
   },
@@ -67,7 +67,13 @@ let nextConfig = {
 // otherwise build will fail for no apparent reason in amplify
 // https://github.com/shadowwalker/next-pwa/issues/151
 require('webpack');
-nextConfig = require('next-pwa')(nextConfig);
+nextConfig = require('next-pwa')({...nextConfig,
+  pwa: {
+    dest: "public",
+    register: true,
+    skipWaiting: true,
+  },
+});
 
 nextConfig = withBundleAnalyzer(nextConfig);
 

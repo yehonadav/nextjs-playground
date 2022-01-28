@@ -8,6 +8,7 @@
     "build:analyze": "set ANALYZE=true&& yarn build",
     "start": "next start",
     "lint": "next lint",
+    "lint:auto:fix": "yarn lint --fix",
     "install:all": "yarn",
     "install:build": "yarn && yarn run build"
   },
