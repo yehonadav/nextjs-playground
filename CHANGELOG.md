@@ -18,6 +18,17 @@ Failed to register a ServiceWorker for scope ('https://last-working-point.d2nztx
 with script ('https://last-working-point.d2nztxbm9f61l.amplifyapp.com/sw.js'):
 A bad HTTP response code (404) was received when fetching the script.
 
+problem solved after removing sw,js and worker from public, adding
+```
+  pwa: {
+    dest: "public",
+    register: true,
+    skipWaiting: true,
+  },
+```
+to next.config.js
+and following light house inspection.
+
 ## aws-amplify-build-failure - 01.01.2022
 error next@12.0.7: The engine "node" is incompatible with this module. Expected version ">=12.22.0". Got "12.21.0"
 2022-01-01T13:18:35.962Z [WARNING]: error Found incompatible module.
