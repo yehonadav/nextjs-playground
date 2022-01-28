@@ -37,5 +37,3 @@ yarn-error.log*
 
 # secret env
 .env
-/public/sw.js
-/public/workbox-1846d813.js
