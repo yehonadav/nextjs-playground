@@ -1,0 +1,26 @@
+{
+  "extends": "./tsconfig.json",
+
+//  "compileOnSave": true,
+
+  "compilerOptions": {
+    // leave JSX as it is
+    //"jsx": "preserve",
+    // resolve modules as you would expect
+    "moduleResolution": "node",
+    // leave imports as they are
+    "module": "esnext",
+    // do not transpile stuff like classes, async/await, ...
+    "target": "esnext",
+    // produce a source map
+    "sourceMap": true,
+    // types must be declared
+    "noImplicitAny": true,
+    // don't ignore .js files
+    "allowJs": true
+  },
+
+  "exclude": [
+    "./dist/**/*" // error TS5055
+  ]
+}
